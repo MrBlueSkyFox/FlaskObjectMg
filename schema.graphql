@@ -1,0 +1,19 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+type Query {
+    getObject: Object
+}
+type Object{
+    id:String
+    value:Int
+    is_busy:Boolean
+}
+type UUID{
+    id:String
+}
+type Mutation {
+    setObjectPool(n:Int!):Boolean
+    freeObject(object_value: Int!): Boolean
+}
