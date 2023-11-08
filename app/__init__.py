@@ -1,6 +1,6 @@
 from pathlib import Path
 from ariadne import load_schema_from_path, make_executable_schema, \
-    graphql_sync, snake_case_fallback_resolvers, ObjectType
+    graphql_sync, ObjectType
 from ariadne.explorer.playground import PLAYGROUND_HTML
 import click
 from flask import Flask, g, request, jsonify
@@ -18,13 +18,6 @@ mutation_type = ObjectType("Mutation")
 query_type.set_field("getObject", get_object)
 mutation_type.set_field("setObjectPool", set_object_pool)
 mutation_type.set_field("freeObject", free_object)
-# @query_type.field("hello")
-# def get_hello(*_):
-#     return "hello"
-
-
-# query_type.set_field("getTest", get_test)
-# query_type.set_field("hello", get_hello)
 
 schema = make_executable_schema(
     type_defs, query_type, mutation_type
