@@ -1,0 +1,16 @@
+# Exclude Dockerfiles
+Dockerfile*
+# Exclude compose files
+docker-compose.yml*
+
+# Exclude .git directories
+.git/*
+
+# Exclude pytest cache
+.pytest_cache/*
+
+# Exclude py cache
+__pycache__
+*.pyc
+*.pyo
+*.pyd
